@@ -1,0 +1,62 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@8.19.4
+2 info using node@v16.20.2
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 6ms
+5 timing config:load:file:/usr/local/lib/node_modules/npm/npmrc Completed in 271ms
+6 timing config:load:builtin Completed in 272ms
+7 timing config:load:cli Completed in 2ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:/app/.npmrc Completed in 1ms
+10 timing config:load:project Completed in 258ms
+11 timing config:load:file:/root/.npmrc Completed in 232ms
+12 timing config:load:user Completed in 233ms
+13 timing config:load:file:/usr/local/etc/npmrc Completed in 8ms
+14 timing config:load:global Completed in 8ms
+15 timing config:load:validate Completed in 1ms
+16 timing config:load:credentials Completed in 2ms
+17 timing config:load:setEnvs Completed in 2ms
+18 timing config:load Completed in 786ms
+19 timing npm:load:configload Completed in 786ms
+20 timing npm:load:mkdirpcache Completed in 11ms
+21 timing npm:load:mkdirplogs Completed in 11ms
+22 verbose title npm start
+23 verbose argv "start"
+24 timing npm:load:setTitle Completed in 3ms
+25 timing config:load:flatten Completed in 13ms
+26 timing npm:load:display Completed in 15ms
+27 verbose logfile logs-max:10 dir:/app/.npm-cache/_logs
+28 verbose logfile /app/.npm-cache/_logs/2024-12-07T08_50_00_686Z-debug-0.log
+29 timing npm:load:logFile Completed in 42ms
+30 timing npm:load:timers Completed in 0ms
+31 timing npm:load:configScope Completed in 0ms
+32 timing npm:load Completed in 875ms
+33 silly logfile done cleaning log files
+34 http fetch GET 200 https://registry.npmjs.org/npm 1060ms (cache miss)
+35 http fetch GET 200 https://registry.npmjs.org/npm 1266ms (cache miss)
+36 timing command:run-script Completed in 227098ms
+37 timing command:start Completed in 227163ms
+38 notice
+38 notice New major version of npm available! 8.19.4 -> 10.9.2
+38 notice Changelog: <https://github.com/npm/cli/releases/tag/v10.9.2>
+38 notice Run `npm install -g npm@10.9.2` to update!
+38 notice
+39 verbose stack Error: command failed
+39 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/@npmcli/promise-spawn/lib/index.js:63:27)
+39 verbose stack     at ChildProcess.emit (node:events:513:28)
+39 verbose stack     at maybeClose (node:internal/child_process:1100:16)
+39 verbose stack     at Process.ChildProcess._handle.onexit (node:internal/child_process:304:5)
+40 verbose pkgid ecommerce-frontend@1.0.0
+41 verbose cwd /app
+42 verbose Linux 5.15.153.1-microsoft-standard-WSL2
+43 verbose node v16.20.2
+44 verbose npm  v8.19.4
+45 error path /app
+46 error command failed
+47 error signal SIGTERM
+48 error command sh -c -- react-scripts start
+49 verbose exit 1
+50 timing npm Completed in 228150ms
+51 verbose code 1
+52 error A complete log of this run can be found in:
+52 error     /app/.npm-cache/_logs/2024-12-07T08_50_00_686Z-debug-0.log
