@@ -78,6 +78,73 @@ app.post('/products', (req, res) => {
   });
 });
 
+
+
+// Signup route
+app.post("/signup", (req, res) => {
+  const { name, email, password } = req.body;
+
+  if (!name || !email || !password) {
+    return res.status(400).json({ error: "All fields are required." });
+  }
+
+  // Insert new user into the database (no hashing)
+  const query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+  connection.query(query, [name, email, password], (err, results) => {
+    if (err) {
+      console.error("Error inserting user:", err);
+      return res.status(500).json({ error: "Internal server error" });
+    }
+    res.status(201).json({
+      id: results.insertId,
+      name,
+      email,
+    });
+  });
+});
+
+// Login route
+app.post("/login", (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ error: "Email and password are required." });
+  }
+
+  const query = "SELECT * FROM users WHERE email = ?";
+  connection.query(query, [email], (err, results) => {
+    if (err) {
+      console.error("Error fetching user:", err);
+      return res.status(500).json({ error: "Internal server error" });
+    }
+
+    if (results.length === 0) {
+      return res.status(401).json({ error: "Invalid email or password" });
+    }
+
+    const user = results[0];
+
+    // Check if the passwords match
+    if (user.password === password) {
+      res.json({
+        message: "Login successful",
+        user: {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+        },
+      });
+    } else {
+      res.status(401).json({ error: "Invalid email or password" });
+    }
+  });
+});
+
+
+
+
+
+
 // Démarrer le serveur sur le port 5000
 const PORT = process.env.PORT || 5500;
 app.listen(PORT, () => {

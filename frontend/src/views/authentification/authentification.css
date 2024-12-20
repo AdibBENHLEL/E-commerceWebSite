@@ -1,0 +1,141 @@
+.auth_total_page_div {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  background-color: hsl(203, 90%, 12%);
+  align-items: center;
+  gap: 30px;
+  /* Add gap between the image and auth box */
+}
+
+.auth-box {
+  position: relative;
+  width: 550px;
+  padding: 30px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-image: url("../../assets/h1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+.login-box {
+  height: 500px;
+}
+
+.sign_up-box {
+  height: 550px;
+}
+
+.auth-box h2 {
+  margin: 0 0 30px;
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.user-box {
+  margin-bottom: 30px;
+}
+
+.user-box input {
+  width: 100%;
+  padding: 5px;
+  font-size: 1rem;
+  color: hsl(237, 90%, 12%);
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+
+/* Button Styles */
+.auth-button {
+  width: 50%;
+  padding: 12px;
+  background-color: hsl(237, 90%, 12%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-button:hover {
+  background-color: hsl(237, 70%, 20%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.auth-button:active {
+  transform: scale(1);
+  box-shadow: none;
+}
+
+.auth-button:focus {
+  outline: none;
+}
+
+/* Link-style "Home" Button */
+.home-link {
+  color: hsl(237, 90%, 12%);
+  font-weight: bold;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+.alert_message {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.alert_message a,
+.toggle-auth-mode {
+  margin-top: 20px;
+  color: hsl(237, 90%, 12%);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.alert_message a:hover,
+.toggle-auth-mode:hover {
+  text-decoration: underline;
+}
+
+.message {
+  color: rgb(255, 255, 255);
+  font-size: bold;
+  text-align: center;
+}
+
+/* Media Query for Smaller Screens */
+@media screen and (max-width: 850px) {
+  .auth_total_page_div {
+    background-attachment: scroll;
+    /* Remove parallax effect on smaller screens */
+    gap: 20px;
+    /* Adjust gap on smaller screens */
+  }
+
+  .auth-box {
+    width: 80%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .auth-box h2 {
+    font-size: 2rem;
+  }
+}
